@@ -49,6 +49,7 @@ class FetchData extends GetxController {
       }
       searchText = search;
     } on SocketException catch (_) {
+      error = true;
       Get.snackbar(
         "Error",
         "Network connection failed. Please check your internet connection.",
@@ -57,6 +58,7 @@ class FetchData extends GetxController {
         margin: const EdgeInsets.all(10),
       );
     } catch (e) {
+      error = true;
       Get.snackbar(
         "Error",
         e.toString(),
@@ -64,8 +66,8 @@ class FetchData extends GetxController {
         isDismissible: true,
         margin: const EdgeInsets.all(10),
       );
-      error = true;
     }
+    print(error.toString());
     isLoading = false;
     update();
   }

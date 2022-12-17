@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -10,6 +11,8 @@ import 'package:flutter/services.dart';
 import 'package:photo_donloader/widgets/total_image.dart';
 
 void main(List<String> args) {
+  var path = Directory.current.path;
+  print(path);
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,

@@ -43,8 +43,6 @@ class _CategoryTitleState extends State<CategoryTitle> {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 2),
-      alignment: Alignment.center,
-      // width: widget.boxWidth,
       constraints: BoxConstraints(
         minWidth: widget.boxWidth,
       ),
@@ -60,7 +58,7 @@ class _CategoryTitleState extends State<CategoryTitle> {
         ),
       ),
       child: Material(
-        color: Theme.of(context).dividerColor,
+        color: Colors.transparent,
         child: InkWell(
           onTap: () async {
             _isLoading = true;
