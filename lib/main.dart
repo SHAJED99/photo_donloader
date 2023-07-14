@@ -20,7 +20,10 @@ void main(List<String> args) {
   ]).then(
     (_) => runApp(
       GetMaterialApp(
-        scrollBehavior: const MaterialScrollBehavior().copyWith(dragDevices: {PointerDeviceKind.mouse, PointerDeviceKind.touch}),
+        scrollBehavior: const MaterialScrollBehavior().copyWith(dragDevices: {
+          PointerDeviceKind.mouse,
+          PointerDeviceKind.touch
+        }),
         debugShowCheckedModeBanner: false,
         home: MyApp(),
       ),
@@ -43,7 +46,7 @@ class MyApp extends StatelessWidget {
             Column(
               children: [
                 LoadingIndicator(),
-                const SearchBar(),
+                const CustomSearchBar(),
                 const CategoryTitleScrollView(),
                 ImageTilesGridVie(),
               ],

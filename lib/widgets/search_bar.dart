@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:photo_donloader/services/fetch_data.dart';
 
-class SearchBar extends StatefulWidget {
-  const SearchBar({super.key});
+class CustomSearchBar extends StatefulWidget {
+  const CustomSearchBar({super.key});
 
   @override
-  State<SearchBar> createState() => _SearchBarState();
+  State<CustomSearchBar> createState() => _CustomSearchBarState();
 }
 
-class _SearchBarState extends State<SearchBar> {
+class _CustomSearchBarState extends State<CustomSearchBar> {
   String? hintText;
   bool _isLoading = false;
   final FetchData _fetchData = Get.find();
@@ -39,11 +39,7 @@ class _SearchBarState extends State<SearchBar> {
               onSubmitted: ((_) => onPress()),
               controller: _textEditingController,
               textAlignVertical: TextAlignVertical.top,
-              decoration: InputDecoration(
-                  hintText: hintText ?? "Search",
-                  filled: true,
-                  border: UnderlineInputBorder(borderSide: BorderSide.none, borderRadius: BorderRadius.circular(50.0)),
-                  contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 16)),
+              decoration: InputDecoration(hintText: hintText ?? "Search", filled: true, border: UnderlineInputBorder(borderSide: BorderSide.none, borderRadius: BorderRadius.circular(50.0)), contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 16)),
               style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w400, letterSpacing: 1, height: 1),
             ),
           ),
